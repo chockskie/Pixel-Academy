@@ -6,6 +6,66 @@
     <title>PIXEL Academy of Bulan - Senior High School Technical Vocational School</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional CSS for the hero logo */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 60vh;
+        }
+        
+        .hero-logo {
+            position: absolute;
+            left: -33%;
+            top: 43%;
+            transform: translateY(-50%);
+            width: 250px;
+            z-index: 2;
+        }
+        
+        .hero-logo img {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+        }
+        
+        .hero-text {
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-logo {
+                left: 5%;
+                width: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 80px;
+            }
+            
+            .hero-logo {
+                position: relative;
+                left: auto;
+                top: auto;
+                transform: none;
+                width: 200px;
+                margin-bottom: 30px;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -33,18 +93,28 @@
     </header>
 
    <!-- Hero Section - Fixed Zoom -->
-<section class="hero" id="home">
-    <div class="container hero-content">
-        <div class="shs-badge">Senior High School Technical Vocational Institution</div>
-        <h1>Where Bulaneño Creativity Meets Digital Innovation</h1>
-        <p>PIXEL Academy of Bulan is a premier Senior High School Technical Vocational Institution in Bulan Sorsogon for Animation, Game Development, Robotics, and Digital Arts education, offering TESDA-accredited programs that blend Filipino cultural narratives with cutting-edge technology.</p>
-        <div class="hero-buttons">
-            <a href="courses.html" class="btn">Explore Our Courses</a>
-            <a href="portfolio.html" class="btn secondary">View Student Work</a>
-        </div>
-    </div>
-</section>
+   <section class="hero" id="home">
+       <div class="container hero-content">
+           <!-- Logo on the left third -->
+           <div class="hero-logo">
+               <img src="images/hero-logo.png" alt="PIXEL Academy of Bulan Logo">
+           </div>
+           
+           <!-- Centered text content -->
+           <div class="hero-text">
+               <div class="shs-badge">Senior High School Technical Vocational Institution</div>
+               <h1>Where Bulaneño Creativity Meets Digital Innovation</h1>
+               <p>PIXEL Academy of Bulan is a premier Senior High School Technical Vocational Institution in Bulan Sorsogon for Animation, Game Development,
+               Robotics, and Digital Arts education, offering TESDA-accredited programs that blend Filipino cultural narratives with cutting-edge technology.</p>
+               <div class="hero-buttons">
+                   <a href="courses.html" class="btn">Explore Our Courses</a>
+                   <a href="portfolio.html" class="btn secondary">View Student Work</a>
+               </div>
+           </div>
+       </div>
+   </section>
 
+    <!-- Rest of your content remains unchanged -->
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">

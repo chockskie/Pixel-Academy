@@ -6,6 +6,126 @@
     <title>Technical Vocational Courses - PIXEL Academy of Bulan</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles for the enhanced course sections */
+        .course-overview {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .course-overview h3 {
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e63946;
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .overview-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .overview-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .overview-item h4 {
+            color: #e63946;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .overview-item h4 i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .subjects-section {
+            margin: 40px 0;
+        }
+        
+        .subjects-section h3 {
+            color: #1a1a2e;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e63946;
+        }
+        
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .subject-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .subject-header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .subject-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .subject-body {
+            padding: 20px;
+        }
+        
+        .subject-body p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .subject-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #777;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .subjects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-overview, .overview-item {
+                padding: 20px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -76,6 +196,104 @@
                         </div>
                     </div>
                     <a href="https://forms.office.com/r/Ms4uEKprgN" class="btn apply-now" target="_blank">Apply for This Program</a>
+                </div>
+            </div>
+            
+            <!-- Course Overview Section -->
+            <div class="course-overview">
+                <h3>Course Overview</h3>
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <h4><i class="fas fa-bullseye"></i> Program Objectives</h4>
+                        <p>This program equips students with comprehensive animation skills, from foundational drawing to advanced 3D animation, preparing them for careers in animation studios, game development, and multimedia production.</p>
+                    </div>
+                    <div class="overview-item">
+                        <h4><i class="fas fa-user-tie"></i> Target Audience</h4>
+                        <p>Creative individuals with interest in drawing, storytelling, and technology. No prior animation experience required - we start from the basics.</p>
+                    </div>
+                    <div class="overview-item">
+                        <h4><i class="fas fa-chart-line"></i> Industry Relevance</h4>
+                        <p>With the growing animation industry in the Philippines and globally, skilled animators are in high demand for films, TV series, games, and digital content.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Major Subjects Section -->
+            <div class="subjects-section">
+                <h3>Major Subjects</h3>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Fundamentals of Drawing</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Develop essential drawing skills including perspective, anatomy, form, and composition through traditional and digital media.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 120 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>2D Animation Principles</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Master the 12 principles of animation, character design, storyboarding, and traditional 2D animation techniques.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 160 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>3D Modeling & Animation</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Learn 3D modeling, texturing, rigging, and animation using industry-standard software like Blender and Autodesk Maya.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 200 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Visual Effects & Compositing</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Create stunning visual effects, motion graphics, and composite various elements into cohesive scenes using After Effects.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 120 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Filipino Animation History</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Study Philippine animation heritage and incorporate local cultural elements into contemporary animation projects.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 80 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Portfolio Development</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Create a professional animation portfolio showcasing your best work for job applications and further studies.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 100 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -170,6 +388,104 @@
                 </div>
             </div>
             
+            <!-- Course Overview Section -->
+            <div class="course-overview">
+                <h3>Course Overview</h3>
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <h4><i class="fas fa-bullseye"></i> Program Objectives</h4>
+                        <p>This program provides comprehensive training in game design, programming, and development, preparing students for careers in the rapidly growing game industry.</p>
+                    </div>
+                    <div class="overview-item">
+                        <h4><i class="fas fa-user-tie"></i> Target Audience</h4>
+                        <p>Students interested in gaming, programming, and creative problem-solving. Basic computer skills recommended but not required.</p>
+                    </div>
+                    <div class="overview-item">
+                        <h4><i class="fas fa-chart-line"></i> Industry Relevance</h4>
+                        <p>The Philippines is becoming a hub for game development outsourcing, with growing demand for skilled game developers locally and internationally.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Major Subjects Section -->
+            <div class="subjects-section">
+                <h3>Major Subjects</h3>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Game Design Fundamentals</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Learn core game design principles, mechanics, player psychology, and the game development pipeline.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 100 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Programming for Games</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Master C# programming fundamentals, algorithms, and data structures specifically for game development.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 180 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Unity Game Engine</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Comprehensive training in Unity engine, including scene management, physics, animation, and UI systems.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 200 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Game Art & Asset Creation</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Create 2D and 3D game assets, understand optimization techniques, and implement them in game engines.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 120 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Philippine Game Development</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Study Filipino game development history and incorporate local culture, mythology, and themes into game projects.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 80 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Game Project Development</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Complete a full game development cycle from concept to publication, working in teams to create portfolio-ready projects.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 160 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="course-content">
                 <div class="content-section">
                     <h3>What You Will Learn</h3>
@@ -261,6 +577,104 @@
                 </div>
             </div>
             
+            <!-- Course Overview Section -->
+            <div class="course-overview">
+                <h3>Course Overview</h3>
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <h4><i class="fas fa-bullseye"></i> Program Objectives</h4>
+                        <p>This program provides hands-on training in robotics, electronics, and automation systems, preparing students for technical roles in manufacturing, engineering, and emerging technology fields.</p>
+                    </div>
+                    <div class="overview-item">
+                        <h4><i class="fas fa-user-tie"></i> Target Audience</h4>
+                        <p>Students interested in electronics, programming, and mechanical systems. Logical thinking and problem-solving skills are beneficial.</p>
+                    </div>
+                    <div class="overview-item">
+                        <h4><i class="fas fa-chart-line"></i> Industry Relevance</h4>
+                        <p>With Industry 4.0 transforming manufacturing and other sectors, robotics and automation technicians are in high demand across various industries.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Major Subjects Section -->
+            <div class="subjects-section">
+                <h3>Major Subjects</h3>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Electronics Fundamentals</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Learn basic electronics, circuit design, soldering techniques, and PCB fabrication.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 120 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Microcontroller Programming</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Master Arduino and Raspberry Pi programming for robotics applications, sensor integration, and motor control.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 160 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Robotic Systems Design</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Design, build, and program complete robotic systems including manipulators, mobile robots, and automated devices.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 180 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Industrial Automation</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Study Programmable Logic Controllers (PLCs), industrial robotics, and automated manufacturing systems.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 140 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>3D Printing & Fabrication</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Learn CAD modeling for robotics components and use 3D printers to create custom parts and prototypes.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 100 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Robotics Project Development</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Complete a capstone robotics project from concept to implementation, demonstrating comprehensive skills.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 120 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="course-content">
                 <div class="content-section">
                     <h3>What You Will Learn</h3>
@@ -349,6 +763,104 @@
                         </div>
                     </div>
                     <a href="https://forms.office.com/r/Ms4uEKprgN" class="btn apply-now" target="_blank">Apply for This Program</a>
+                </div>
+            </div>
+            
+            <!-- Course Overview Section -->
+            <div class="course-overview">
+                <h3>Course Overview</h3>
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <h4><i class="fas fa-bullseye"></i> Program Objectives</h4>
+                        <p>This program develops artistic talent through digital media, teaching students to create professional illustrations, designs, and visual content for various industries.</p>
+                    </div>
+                    <div class="overview-item">
+                        <h4><i class="fas fa-user-tie"></i> Target Audience</h4>
+                        <p>Artistically inclined students with interest in drawing, design, and digital media. Creative thinking and visual imagination are key assets.</p>
+                    </div>
+                    <div class="overview-item">
+                        <h4><i class="fas fa-chart-line"></i> Industry Relevance</h4>
+                        <p>Digital artists are in high demand for advertising, publishing, gaming, animation, and web design, with growing freelance opportunities.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Major Subjects Section -->
+            <div class="subjects-section">
+                <h3>Major Subjects</h3>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Digital Painting Fundamentals</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Master digital painting techniques, color theory, composition, and brushwork using professional software.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 140 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Character Design & Development</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Create compelling characters with unique personalities, styles, and visual appeal for various media.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 120 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Visual Storytelling & Composition</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Develop narrative skills through sequential art, illustration series, and effective visual communication.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 100 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Graphic Design Principles</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Learn typography, layout design, branding, and visual identity creation for print and digital media.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 120 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Philippine Design Elements</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Study Filipino visual culture, traditional patterns, and motifs to incorporate into contemporary design.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 80 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 11</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Professional Portfolio Development</h4>
+                        </div>
+                        <div class="subject-body">
+                            <p>Curate and present a professional digital art portfolio for clients, employers, or further education.</p>
+                            <div class="subject-meta">
+                                <span><i class="far fa-clock"></i> 100 hours</span>
+                                <span><i class="fas fa-book"></i> Grade 12</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -477,7 +989,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 PIXEL Academy of Bulan - Senior High School Technical Vocational Institution. All rights reserved. | Recognized by DepEd and TESDA</p>
+                <p>&copy; 2025 PIXEL Academy of Bulan - Senior High School Technical Vocational Institution. All rights reserved. | Recognized by DepEd and TESDA</p>
             </div>
         </div>
     </footer>
