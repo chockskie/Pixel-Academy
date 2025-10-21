@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIXEL Academy of  Bulan - Senior High School Technical Vocational School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #ff3e7f;
+            --robotics: #00b09b;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+            animation: pulse 2s infinite;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.9)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--accent), #ff6b9c);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 62, 127, 0.4);
+            animation: fadeIn 1s ease 0.6s both;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 62, 127, 0.6);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 400px;
+            background-image: url('images/about-us.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(106, 17, 203, 0.2), rgba(37, 117, 252, 0.2));
+            z-index: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: var(--gray);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Courses Section */
+        .courses {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-image {
+            height: 200px;
+            background-color: var(--primary);
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .course-content {
+            padding: 1.5rem;
+        }
+        
+        .course-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .course-content p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Animation Section */
+        .animation-showcase {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .animation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            position: relative;
+        }
+        
+        .pixel-art {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .pixel {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary);
+            animation: colorShift 4s infinite;
+        }
+        
+        .pixel:nth-child(2) {
+            top: 0;
+            left: 20px;
+            animation-delay: 0.5s;
+        }
+        
+        .pixel:nth-child(3) {
+            top: 0;
+            left: 40px;
+            animation-delay: 1s;
+        }
+        
+        .pixel:nth-child(4) {
+            top: 20px;
+            left: 0;
+            animation-delay: 1.5s;
+        }
+        
+        .pixel:nth-child(5) {
+            top: 20px;
+            left: 20px;
+            background-color: var(--accent);
+            animation-delay: 2s;
+        }
+        
+        .pixel:nth-child(6) {
+            top: 20px;
+            left: 40px;
+            animation-delay: 2.5s;
+        }
+        
+        .pixel:nth-child(7) {
+            top: 40px;
+            left: 0;
+            animation-delay: 3s;
+        }
+        
+        .pixel:nth-child(8) {
+            top: 40px;
+            left: 20px;
+            animation-delay: 3.5s;
+        }
+        
+        .pixel:nth-child(9) {
+            top: 40px;
+            left: 40px;
+            animation-delay: 4s;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('images/cta-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Senior High School Badge */
+        .shs-badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes colorShift {
+            0% {
+                background-color: var(--primary);
+            }
+            50% {
+                background-color: var(--accent);
+            }
+            100% {
+                background-color: var(--primary);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="PIXEL Academy of Bulan Logo" class="logo-img">
+                <div class="logo-text">PIXEL Academy<span>of Bulan</span></div>
+            </div>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact" class="btn">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="shs-badge">Senior High School Technical Vocational Institution</div>
+            <h1>Where Filipino Creativity Meets Digital Innovation</h1>
+            <p>PIXEL Academy of Bulan is a premier Senior High School Technical Vocational Institution for Animation, Game Development, Robotics, and Digital Arts education, offering TESDA-accredited programs that blend Filipino cultural narratives with cutting-edge technology.</p>
+            <a href="#courses" class="btn">Explore Our Courses</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About PIXEL Academy of Bulan</h2>
+                <p>We are the first and only Senior High School Technical Vocational Institution in Sorsogon specializing in digital arts and technology education.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <!-- Image loaded via CSS background-image -->
+                </div>
+                
+                <div class="about-text">
+                    <h3>Creating the Next Generation of Digital Innovators</h3>
+                    <p>PIXEL Academy of Bulan is a DepEd-recognized Senior High School Technical Vocational Institution dedicated to developing world-class talent in Animation, Game Development, Robotics, and Interactive Media. Our programs combine technical excellence with cultural relevance.</p>
+                    <p>As a TESDA-accredited institution, we offer students the unique opportunity to earn both Senior High School diplomas and National Certifications (NC II/III) in high-demand digital fields.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>TESDA Accredited</h4>
+                            <p>Nationally recognized programs with NC II/III certifications</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>Industry-Standard Tools</h4>
+                            <p>Latest software, hardware and equipment</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Expert Instructors</h4>
+                            <p>Industry professionals as mentors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Technical Vocational Courses</h2>
+                <p>Comprehensive Senior High School programs with TESDA certifications in high-demand digital fields</p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/course-animation.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Animation NC II & NC III</h3>
+                        <p>Master 2D and 3D animation techniques, character design, and visual storytelling. Learn industry-standard software like Adobe Animate, Blender, and Maya.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 2 Years</span>
+                            <span><i class="fas fa-certificate"></i> NC II/III</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/course-game-dev.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Game Development</h3>
+                        <p>Learn to design, develop, and publish games for multiple platforms using Unity and Unreal Engine. Includes programming, design, and project management.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 2 Years</span>
+                            <span><i class="fas fa-certificate"></i> Certificate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/course-robotics.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Robotics & Automation NC II</h3>
+                        <p>Explore robotics design, programming, and automation systems. Work with Arduino, Raspberry Pi, and industrial automation equipment.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 2 Years</span>
+                            <span><i class="fas fa-certificate"></i> NC II</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/course-digital-arts.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Digital Illustration & Design</h3>
+                        <p>Develop your unique artistic style and master digital painting, character design, and visual storytelling using Photoshop, Illustrator, and Procreate.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 2 Years</span>
+                            <span><i class="fas fa-certificate"></i> NC II</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="animation-showcase" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Portfolio</h2>
+                <p>Experience the exceptional work of our Senior High School students</p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/student-work1.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Animation Projects</h3>
+                        <p>Showcasing the best animation work from our students, featuring both 2D and 3D animation techniques and Filipino-inspired characters.</p>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/student-work2.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Game Development</h3>
+                        <p>Playable games created by our students, demonstrating their skills in coding, design, and user experience with Filipino cultural themes.</p>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/student-work3.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Robotics Projects</h3>
+                        <p>Innovative robotics and automation projects developed by our students, showcasing problem-solving and engineering skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our State-of-the-Art Facilities</h2>
+                <p>Modern learning environments designed for technical vocational excellence</p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/facility1.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Digital Animation Labs</h3>
+                        <p>High-performance workstations equipped with industry-standard software for animation and visual effects.</p>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/facility2.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Robotics & Automation Lab</h3>
+                        <p>Specialized lab with robotics kits, 3D printers, microcontrollers, and industrial automation equipment for hands-on learning.</p>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('images/facility3.jpg');">
+                        <!-- Image loaded via CSS background-image -->
+                    </div>
+                    <div class="course-content">
+                        <h3>Collaborative Workspaces</h3>
+                        <p>Creative environments designed to foster collaboration, innovation, and team-based project development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Success Stories</h2>
+                <p>Hear from our graduates who are making waves in the creative and technology industries</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "PIXEL Academy gave me the skills and confidence to start my own animation studio right after Senior High School. The TESDA certification helped me land international clients while staying in Bulan."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('images/team-member1.jpg');"></div>
+                        <div class="author-info">
+                            <h4>Maria Santos</h4>
+                            <p>Class of 2022, Animation NC III</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The Robotics program at PIXEL Academy was transformative. I went from knowing nothing about electronics to winning regional robotics competitions. Now I'm studying Mechatronics Engineering with a full scholarship."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('images/team-member2.jpg');"></div>
+                        <div class="author-info">
+                            <h4>Rico Javier</h4>
+                            <p>Class of 2021, Robotics NC II</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "As a traditional artist, I was hesitant about digital tools. PIXEL Academy helped me transition my skills to the digital space while maintaining my artistic identity. Now I work as a freelance illustrator for international clients while completing my Senior High School."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('images/team-member3.jpg');"></div>
+                        <div class="author-info">
+                            <h4>Luna Dela Cruz</h4>
+                            <p>Class of 2023, Digital Illustration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Start Your Technical Vocational Journey Today</h2>
+            <p>Join PIXEL Academy of Bulan and turn your passion for technology and digital arts into a rewarding career. Applications for the next school year are now open for Grade 11 students.</p>
+            <a href="#" class="btn">Apply Now for S.Y. 2024-2025</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PIXEL Academy of Bulan</h3>
+                    <p>Senior High School Technical Vocational Institution. Transforming the educational landscape of the Bicol region through technology education and community engagement.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="#">Animation NC II/III</a></li>
+                        <li><a href="#">Game Development</a></li>
+                        <li><a href="#">Robotics & Automation NC II</a></li>
+                        <li><a href="#">Digital Illustration NC II</a></li>
+                        <li><a href="#">Short Courses</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Bulan, Sorsogon, Philippines</li>
+                        <li><i class="fas fa-phone"></i> (056) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> admissions@pixelacademybulan.edu.ph</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 PIXEL Academy of Bulan - Senior High School Technical Vocational Institution. All rights reserved. | Recognized by DepEd and TESDA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu after clicking
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

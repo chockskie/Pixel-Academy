@@ -1,0 +1,37 @@
+pixel-academy/
+├── index.html
+├── portfolio.html
+├── courses.html
+├── facilities.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── images/
+    ├── logo.png
+    ├── hero-bg.jpg
+    ├── about-us.jpg
+    ├── campus.jpg
+    ├── course-animation.jpg
+    ├── course-game-dev.jpg
+    ├── course-robotics.jpg
+    ├── course-digital-arts.jpg
+    ├── student-work1.jpg
+    ├── student-work2.jpg
+    ├── student-work3.jpg
+    ├── student-work4.jpg
+    ├── student-work5.jpg
+    ├── student-work6.jpg
+    ├── student-work7.jpg
+    ├── student-work8.jpg
+    ├── student-work9.jpg
+    ├── facility1.jpg
+    ├── facility2.jpg
+    ├── facility3.jpg
+    ├── facility4.jpg
+    ├── facility5.jpg
+    ├── facility6.jpg
+    ├── team-member1.jpg
+    ├── team-member2.jpg
+    ├── team-member3.jpg
+    └── cta-bg.jpg
